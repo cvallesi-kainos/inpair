@@ -6,13 +6,13 @@ from datetime import datetime
 
 def function_handler(request):
     # Read API token from environment variable
-    env_variable_name = 'INPOST_API_TOKEN'
-    token = os.environ.get(env_variable_name)
+    inpost_api_token = 'INPOST_API_TOKEN'
+    token = os.environ.get(inpost_api_token)
 
     if not token:
         return {
             'statusCode': 500,
-            'body': f'Error: {env_variable_name} environment variable not set.'
+            'body': f'Error: {inpost_api_token} environment variable not set.'
         }
 
     # API location and auth
